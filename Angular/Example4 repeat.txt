@@ -1,0 +1,50 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script>
+
+var app = angular.module("persModul", [])
+app.controller("persController", function ($scope) {
+
+var personeller=[
+{isim:"Hayri",soyisim:"KARA",cinsiyet:"Erkek",maas:3000},
+{isim:"Yaþar",soyisim:"DOÐAN",cinsiyet:"Erkek",maas:2500},
+{isim:"Ýsmet",soyisim:"ULUÇ",cinsiyet:"Erkek",maas:2700},
+{isim:"Ayþe",soyisim:"YURT",cinsiyet:"Kadýn",maas:3500},
+{isim:"Sunay",soyisim:"YERLÝ",cinsiyet:"Kadýn",maas:2850},
+{isim:"Nazmiye",soyisim:"ÇARIKÇI",cinsiyet:"Kadýn",maas:2000}
+];
+
+$scope.personeller = personeller;
+});
+
+
+    </script>
+
+</head>
+<body ng-app="persModul">
+    <div ng-controller="persController">
+        <table>
+            <thead>
+                <tr>
+                    <th>ÝSÝM</th>
+                    <th>SOYÝSÝM</th>
+                    <th>CÝNSÝYET</th>
+                    <th>MAAÞ</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="personel in personeller">
+                    <!-- $scope.personeller ile gelen ifade-->
+                    <td> {{ personel.isim }}   </td>
+                    <td> {{ personel.soyisim }}    </td>
+                    <td> {{ personel.cinsiyet }}   </td>
+                    <td> {{ personel.maas }}TL    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

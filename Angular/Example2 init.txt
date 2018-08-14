@@ -1,0 +1,21 @@
+@*<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <title>AngularJS Baþlangýç</title>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <br />
+        <div ng-app="" ng-init="ProductCount=20; Cost=5">
+            <p>
+                <b>Toplam Fatura:</b> {{ ProductCount * Cost }}TL
+            </p>
+
+            @*dikkat edilecek husus p içine angular yazýlýrsa p nin içi degisir.
+            <p ng-bind="ProductCount*Cost" > TL
+                </p>*@
+@*</div>
+    </form>
+</body>
+</html>*@

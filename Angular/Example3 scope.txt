@@ -1,0 +1,29 @@
+@*<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="~/Scripts/angular.min.js"></script>
+    <title>AngularJS Baþlangýç</title>
+    <script>
+            var app = angular.module('onur', []);
+            app.controller('ctrl1', function ($scope) {
+            $scope.Name = "Onur Balkanli";
+            $scope.Email = "onur.balkanli@hotmail.com";
+            $scope.Address = "Istanbul, Turkey";
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <br />
+        <div ng-app="onur" ng-controller="ctrl1">
+            Ýsim==>:<input type="text" ng-model="Name">
+            <br><br>
+            Email=>:<input type="text" ng-model="Email">
+            <br><br>
+            Address:<input type="text" ng-model="Address">
+            <br><br>
+            <b> Müþteri Bilgileri:</b> {{Name + " " + Email + " " +Address}}
+        </div>
+    </form>
+</body>
+</html>*@

@@ -1,0 +1,27 @@
+
+
+@*<!DOCTYPE html>
+    <html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <script src="/Scripts/angular.min.js"></script>
+        <title>AngularJS Baþlangýç</title>
+    </head>
+    <body>
+        <form id="form1" runat="server">
+            <br />
+            <div ng-app="">
+                <p>
+                    Ýsminizi Giriniz=>::
+                    <input type="text" ng-model="Name">
+                </p>
+                <p ng-bind="Name"></p>
+
+                <p>
+                    Soyadýnýzý Giriniz:
+                    <input type="text" ng-model="SurName">
+                </p>
+                <p>{{SurName}}</p>
+            </div>
+        </form>
+    </body>
+    </html>*@

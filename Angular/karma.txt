@@ -1,0 +1,52 @@
+<script src="~/Scripts/angular.min.js"></script>
+<html ng-app="multiApp">
+
+<body>
+    <div ng-controller="countCtrl">
+        <input type="button" ng-click="click()" value="Týkla" /><br />
+        {{ "Toplam Týklanma:" + count }}
+    </div>
+    <hr />
+    <div ng-controller="showCtrl">
+        <input type="checkbox" ng-model="isShow" />Göster - {{ isShow }}<br />
+        <input type="checkbox" ng-model="isEnable" />Aktif - {{ isEnable }}<br />
+        <table ng-show="isShow">
+            <tr>
+                <td>Ýsim:</td>
+                <td><input type="text" ng-model="person.Name" ng-disabled="!(isEnable)"></td>
+            </tr>
+            <tr>
+                <td>
+                    Soyad:
+                </td>
+                <td><input type="text" ng-model="person.Surname" ng-disabled="!(isEnable)"></td>
+            </tr>
+            <tr>
+                <td>
+                    Full Name:
+                </td>
+                <td> {{ person.Name + " " + person.Surname }} </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+<script>
+    var app = angular.module("countApp", []);
+    app.controller("countCtrl", function ($scope) {
+        $scope.count = 0;
+        $scope.click = function () {
+            $scope.count = $scope.count + 1;
+        }
+    });
+
+
+    var blogapp = angular.module("showApp", []);
+    blogapp.controller("showCtrl", function ($scope) {
+        $scope.isShow = true;
+        $scope.isEnable = true;
+        $scope.person = { Name: "Bora", Surname: "Kaþmer" };
+    });
+
+    var mainapp = angular.module('multiApp', ['countApp', 'showApp']);
+</script>
